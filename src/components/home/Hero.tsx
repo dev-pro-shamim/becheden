@@ -6,10 +6,10 @@ const Hero = async () => {
   const extraData = res?.success ? res.data : null;
 
   const carouselImages = [
-    { id: 1, imageSrc: extraData?.adImage1 || "/images/hero_image3.jpeg"},
-    { id: 2, imageSrc: extraData?.adImage2 || "/images/hero_image2.jpeg"},
-    { id: 3, imageSrc: extraData?.adImage3 || "/images/hero_image1.jpeg"},
-    { id: 4, imageSrc: extraData?.adImage4 || "/images/hero_image4.jpeg"},
+    { id: 1, imageSrc: extraData?.adImage1 || "/images/hero_image3.jpeg" },
+    { id: 2, imageSrc: extraData?.adImage2 || "/images/hero_image2.jpeg" },
+    { id: 3, imageSrc: extraData?.adImage3 || "/images/hero_image1.jpeg" },
+    { id: 4, imageSrc: extraData?.adImage4 || "/images/hero_image4.jpeg" },
     // { id: 5, imageSrc: extraData?.adImage5 || "/images/hero5.png" },
   ];
 

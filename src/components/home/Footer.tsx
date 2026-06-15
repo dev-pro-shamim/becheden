@@ -73,15 +73,15 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative overflow-hidden border-border/30 border-t bg-background py-8 text-sm text-muted-foreground">
+    <footer className="relative overflow-hidden border-t border-border dark:border-primary/20 bg-linear-to-b from-background to-secondary/50 dark:to-primary/5 py-10 text-sm text-muted-foreground">
       <div className="custom-width mx-auto px-6">
         <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary dark:bg-primary/20 text-primary">
                 <Globe className="h-6 w-6" />
               </div>
-              <p className="text-xl font-bold text-foreground tracking-tight">Beche <span className="text-destructive">Den</span></p>
+              <p className="text-xl font-bold text-foreground tracking-tight">Beche <span className="text-primary">Den</span></p>
             </div>
             <p className="text-base leading-relaxed text-muted-foreground/90 max-w-xs">
               {t("companyDescription")}
@@ -90,7 +90,7 @@ const Footer = () => {
 
           {infoColumns.slice(0, 2).map(({ title, links }) => (
             <div key={title} className="space-y-6">
-              <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
+              <h3 className="text-sm font-bold uppercase tracking-wider text-primary">
                 {title}
               </h3>
               <ul className="space-y-3">
@@ -109,13 +109,13 @@ const Footer = () => {
           ))}
 
           <div className="space-y-6">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-primary">
               {t("contactUs")}
             </h3>
             <div className="space-y-4">
               {contactDetails.map(({ icon: Icon, label, description, href }) => (
                 <div key={label} className="flex items-start gap-3 group">
-                  <div className="mt-1 rounded-full bg-primary/5 p-1.5 text-primary transition-colors group-hover:bg-primary/10">
+                  <div className="mt-1 rounded-full bg-secondary dark:bg-primary/20 p-1.5 text-primary transition-colors group-hover:bg-primary/15">
                     <Icon className="h-4 w-4" />
                   </div>
                   <div>
@@ -139,12 +139,12 @@ const Footer = () => {
           </div>
         </div>
 
-        <Separator className="my-10 bg-border/40" />
+        <Separator className="my-10 bg-border" />
 
         <div className="flex flex-col items-center justify-between gap-6 text-xs sm:flex-row">
           <div className="flex flex-col gap-2 text-center sm:text-left">
             <p className="font-medium text-muted-foreground">
-              © {new Date().getFullYear()}Becheden. {t("allRightsReserved")}
+              © {new Date().getFullYear()} Becheden. {t("allRightsReserved")}
             </p>
             <p className="text-muted-foreground/60">
               {t("developedBy")} <span className="font-semibold text-primary">SmartEdge Technologies</span>
@@ -157,7 +157,7 @@ const Footer = () => {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="group flex h-9 w-9 items-center justify-center rounded-full border border-border/50 bg-background text-muted-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-md hover:-translate-y-0.5"
+                className="group flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background text-muted-foreground transition-all hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5"
               >
                 <Icon className="h-4 w-4" />
               </Link>

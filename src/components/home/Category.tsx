@@ -4,16 +4,17 @@ import { cn } from "@/lib/utils";
 import PageLayout from "@/tools/PageLayout";
 import { fetchAllCategories } from "@/services/category";
 import { getTranslations } from "next-intl/server";
+import { ArrowRight } from "lucide-react";
 
 const accentColors = [
-  "from-primary/20 via-primary/10 to-transparent",
-  "from-indigo-400/25 via-indigo-300/10 to-transparent",
+  "from-emerald-500/20 via-emerald-400/10 to-transparent",
+  "from-green-400/25 via-green-300/10 to-transparent",
+  "from-teal-400/25 via-teal-300/10 to-transparent",
   "from-emerald-400/25 via-emerald-300/10 to-transparent",
-  "from-amber-400/25 via-amber-300/10 to-transparent",
-  "from-rose-400/25 via-rose-300/10 to-transparent",
-  "from-sky-400/25 via-sky-300/10 to-transparent",
-  "from-purple-400/25 via-purple-300/10 to-transparent",
-  "from-pink-400/25 via-pink-300/10 to-transparent",
+  "from-green-500/20 via-green-400/10 to-transparent",
+  "from-teal-500/20 via-teal-400/10 to-transparent",
+  "from-emerald-600/15 via-emerald-500/10 to-transparent",
+  "from-green-600/15 via-green-500/10 to-transparent",
 ];
 
 const Category = async () => {
@@ -22,12 +23,13 @@ const Category = async () => {
   const t = await getTranslations("Home");
 
   return (
-    <section className="relative overflow-hidden">
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-88 w-88 -translate-x-1/2 -translate-y-1/2 rounded-full bg-emerald-500/15 blur-3xl" />
+    <section className="relative overflow-hidden py-16 lg:py-20">
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-3xl" />
       <PageLayout>
         <div className="space-y-2 pb-10">
-          <div className="mx-auto max-w-3xl space-y-2 text-center">
-            <span className="text-sm font-semibold uppercase tracking-[0.3em] text-foreground">
+          <div className="mx-auto max-w-3xl space-y-3 text-center">
+            <span className="inline-flex items-center gap-2 rounded-full bg-secondary dark:bg-primary/15 px-4 py-1.5 text-sm font-medium text-primary">
+              <span className="flex h-2 w-2 rounded-full bg-primary" />
               {t("browseMarketplace")}
             </span>
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
@@ -45,7 +47,7 @@ const Category = async () => {
               <Link
                 key={category._id}
                 href={`/ads?category=${category.slug}`}
-                className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card/95 p-5 transition hover:-translate-y-1 hover:border-primary/40"
+                className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card/95 p-5 transition-all hover:-translate-y-1.5 hover:border-primary/60 hover:shadow-lg hover:shadow-primary/10"
               >
                 <div
                   className={cn(
@@ -54,7 +56,7 @@ const Category = async () => {
                   )}
                 />
                 <div className="relative z-10 flex items-start gap-4">
-                  <span className="inline-flex size-16 items-center justify-center rounded-xl border border-border/40 bg-background/80 text-primary shadow-sm transition group-hover:border-primary/40 group-hover:scale-110">
+                  <span className="inline-flex size-16 items-center justify-center rounded-xl border border-border/40 bg-background/80 text-primary shadow-sm transition group-hover:border-primary/60 group-hover:scale-110 group-hover:bg-secondary dark:group-hover:bg-primary/10">
                     {category.icon && (
                       <div className="relative w-10 h-10">
                         <Image 
@@ -68,9 +70,9 @@ const Category = async () => {
                     )}
                   </span>
                   <div className="space-y-1">
-                    <p className="text-sm font-semibold text-foreground">{category.name}</p>
-                    <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                      {t("exploreNow")}
+                    <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">{category.name}</p>
+                    <p className="flex items-center gap-1 text-xs uppercase tracking-wider text-muted-foreground group-hover:text-primary transition-colors">
+                      {t("exploreNow")} <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
                     </p>
                   </div>
                 </div>

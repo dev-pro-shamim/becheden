@@ -683,5 +683,41 @@
     "vPhone": "Valid phone number is required.",
     "vName": "Name is required.",
     "vEmail": "Invalid email address."
+  },
+  "HeroSection": {
+    "badge": "Bangladesh's Trusted Marketplace",
+    "heading": "Beche Den",
+    "subheading": "puratan kinaben — bikriben",
+    "description": "Bangladesh's trusted marketplace for buying and selling everything—from electronics and vehicles to property and services.",
+    "searchPlaceholder": "What are you looking for?",
+    "allCategories": "All Categories",
+    "searchButton": "Search"
+  },
+  "HowItWorks": {
+    "title": "How It Works",
+    "subtitle": "Start buying and selling in three simple steps",
+    "step1Title": "Post Your Ad",
+    "step1Desc": "Easily list your item with photos, description, and a fair price.",
+    "step2Title": "Find What You Need",
+    "step2Desc": "Browse thousands of listings and find exactly what you're looking for.",
+    "step3Title": "Connect & Deal",
+    "step3Desc": "Contact sellers directly through chat and make a safe deal."
+  },
+  "Testimonials": {
+    "title": "What Our Users Say",
+    "subtitle": "Join thousands of happy buyers and sellers in Bangladesh"
+  },
+  "CTA": {
+    "title": "Ready to start selling?",
+    "subtitle": "Join thousands of sellers in Bangladesh and turn your unused items into opportunities.",
+    "button1": "Post Free Ad",
+    "button2": "Browse Listings"
+  },
+  "Newsletter": {
+    "title": "Stay Updated",
+    "subtitle": "Get the latest deals and updates delivered to your inbox.",
+    "placeholder": "Enter your email",
+    "button": "Subscribe",
+    "trust": "No spam, unsubscribe anytime."
   }
 }
