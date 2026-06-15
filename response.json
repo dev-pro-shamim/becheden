@@ -1,0 +1,13 @@
+{
+    "success": true,
+    "message": "Extra data updated successfully!",
+    "data": {
+        "adImage1": "https://res.cloudinary.com/dweesppci/image/upload/v1770455397/recycle-mart/images/uagxx40wng8-1770455389114-adImage-hero1.png",
+        "adImage2": "https://res.cloudinary.com/dweesppci/image/upload/v1770455560/recycle-mart/images/7mr96ldz0o3-1770455551042-adImage-hero2.png",
+        "adImage3": "https://res.cloudinary.com/dweesppci/image/upload/v1770455580/recycle-mart/images/3ihivudm50u-1770455572668-adImage-hero4.png",
+        "adImage4": "https://res.cloudinary.com/dweesppci/image/upload/v1770455580/recycle-mart/images/3ihivudm50u-1770455572668-adImage-hero4.png",
+        "adImage5": "https://res.cloudinary.com/dweesppci/image/upload/v1770455580/recycle-mart/images/3ihivudm50u-1770455572668-adImage-hero4.png",
+        "adImage6": "https://res.cloudinary.com/dweesppci/image/upload/v1770455580/recycle-mart/images/3ihivudm50u-1770455572668-adImage-hero4.png",
+        "adImage7": "https://res.cloudinary.com/dweesppci/image/upload/v1770455580/recycle-mart/images/3ihivudm50u-1770455572668-adImage-hero4.png"
+    }
+}
