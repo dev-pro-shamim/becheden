@@ -63,7 +63,7 @@ export const LocationSelector = ({ value, onSelect, className, placeholder }: Lo
                 </Button>
             </PopoverTrigger>
             <PopoverContent 
-              className="w-120 p-0 overflow-hidden rounded-lg shadow-xl border-border bg-background/95 backdrop-blur-sm" 
+              className="w-120 p-0 overflow-hidden rounded-lg shadow-xl border-border bg-background/95" 
               align="start"
               sideOffset={8}
             >

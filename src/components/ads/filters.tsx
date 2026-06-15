@@ -5,12 +5,13 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Slider } from "@/components/ui/slider";
-import { X, SlidersHorizontal } from "lucide-react";
+import { X, SlidersHorizontal, RotateCcw } from "lucide-react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Category } from "@/types/category.type";
 import { CategorySkeleton } from "./CategorySkeleton";
 import { useSmartFilter } from "@/hooks/useSmartFilter";
 import { useTranslations } from "next-intl";
+import { cn } from "@/lib/utils";
 
 export const sortOptions = [
   { value: "newest", label: "Date: Newest first" },
@@ -31,9 +32,6 @@ export type FiltersProps = {
   showAsSheet?: boolean;
 };
 
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
-
 const FiltersContent = ({ categories }: { categories: Category[] }) => {
   const t = useTranslations("Ads");
   const { updateFilter, updateBatch, clearAll, getFilter } = useSmartFilter();
@@ -51,45 +49,104 @@ const FiltersContent = ({ categories }: { categories: Category[] }) => {
   const appliedCount = (selectedCategory ? 1 : 0) + (selectedCondition ? 1 : 0) + (hasPriceFilter ? 1 : 0);
 
   return (
-    <>
-      <header className="flex items-center justify-between space-y-6">
+    <div className="space-y-4">
+      {/* Header */}
+      <header className="flex items-center justify-between">
         <div>
           <p className="text-sm font-semibold text-foreground">{t("refineResults")}</p>
           <p className="text-xs text-muted-foreground">
-            {appliedCount === 1 ? t("appliedFilters", { count: appliedCount }) : t("appliedFiltersPlural", { count: appliedCount })}
+            {appliedCount} {appliedCount === 1 ? "filter applied" : "filters applied"}
           </p>
         </div>
-        <Button
-          variant="ghost"
-          size="sm"
-          className="text-xs text-muted-foreground hover:text-primary"
-          onClick={() => clearAll(["page", "limit", "sort", "location", "searchTerm"])}
-        >
-          {t("reset")}
-        </Button>
+        {appliedCount > 0 && (
+          <Button
+            variant="ghost"
+            size="sm"
+            className="text-xs gap-1 text-muted-foreground hover:text-primary"
+            onClick={() => {
+              clearAll(["page", "limit", "sort", "location", "searchTerm", "view"]);
+              setLocalPrice([0, 100000]);
+            }}
+          >
+            <RotateCcw className="h-3 w-3" />
+            {t("reset")}
+          </Button>
+        )}
       </header>
 
-      <Accordion type="multiple" defaultValue={["category", "condition", "price"]} className="space-y-4">
+      {/* Applied Filter Chips */}
+      {(selectedCategory || selectedCondition || hasPriceFilter) && (
+        <div className="flex flex-wrap gap-1.5">
+          {selectedCategory && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 dark:bg-primary/20 px-2.5 py-1 text-xs font-medium text-primary">
+              {categories.find(c => c.slug === selectedCategory)?.name || selectedCategory}
+              <button type="button" onClick={() => updateFilter("category", null)} className="hover:bg-primary/20 rounded-full p-0.5">
+                <X className="h-3 w-3" />
+              </button>
+            </span>
+          )}
+          {selectedCondition && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 dark:bg-primary/20 px-2.5 py-1 text-xs font-medium text-primary">
+              {selectedCondition}
+              <button type="button" onClick={() => updateFilter("condition", null)} className="hover:bg-primary/20 rounded-full p-0.5">
+                <X className="h-3 w-3" />
+              </button>
+            </span>
+          )}
+          {hasPriceFilter && (
+            <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 dark:bg-primary/20 px-2.5 py-1 text-xs font-medium text-primary">
+              ৳{minPrice.toLocaleString()}–{maxPrice.toLocaleString()}
+              <button type="button" onClick={() => { updateBatch({ minPrice: null, maxPrice: null }); setLocalPrice([0, 100000]); }} className="hover:bg-primary/20 rounded-full p-0.5">
+                <X className="h-3 w-3" />
+              </button>
+            </span>
+          )}
+        </div>
+      )}
+
+      <Accordion type="multiple" defaultValue={["category", "condition", "price"]} className="space-y-3">
         {/* Category Filter */}
-        <AccordionItem value="category" className="rounded-2xl border border-border/40 bg-background">
-          <AccordionTrigger className="px-4 py-3 text-sm font-semibold text-foreground">
-            {t("category")}
+        <AccordionItem value="category" className="rounded-2xl border border-border/40 bg-card/50 dark:bg-card/30 shadow-xs overflow-hidden">
+          <AccordionTrigger className="px-4 py-3 text-sm font-semibold text-foreground hover:no-underline hover:bg-primary/5 transition-colors">
+            <span className="flex items-center gap-2">
+              {t("category")}
+              {selectedCategory && (
+                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">1</span>
+              )}
+            </span>
           </AccordionTrigger>
-          <AccordionContent className="px-4 pb-4">
+          <AccordionContent className="px-4 pb-4 pt-1">
             {categories.length > 0 ? (
-              <RadioGroup 
-                value={selectedCategory} 
-                onValueChange={(val) => updateFilter("category", val)}
-              >
+              <div className="space-y-1">
+                {/* "All" option */}
+                <button
+                  type="button"
+                  onClick={() => updateFilter("category", null)}
+                  className={cn(
+                    "w-full text-left px-3 py-2 rounded-xl text-sm transition-all duration-200 active:scale-[0.98]",
+                    !selectedCategory
+                      ? "bg-primary/10 text-primary font-medium"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted/50 hover:translate-x-0.5"
+                  )}
+                >
+                  All Categories
+                </button>
                 {categories.map((cat) => (
-                  <div key={cat._id} className="flex items-center gap-3">
-                    <RadioGroupItem value={cat.slug} id={`cat-${cat.slug}`} />
-                    <Label htmlFor={`cat-${cat.slug}`} className="text-sm text-muted-foreground font-normal cursor-pointer flex-1">
-                      {cat.name}
-                    </Label>
-                  </div>
+                  <button
+                    key={cat._id}
+                    type="button"
+                    onClick={() => updateFilter("category", cat.slug)}
+                    className={cn(
+                      "w-full text-left px-3 py-2 rounded-xl text-sm transition-all duration-200 active:scale-[0.98]",
+                      selectedCategory === cat.slug
+                        ? "bg-primary/10 text-primary font-medium"
+                        : "text-muted-foreground hover:text-foreground hover:bg-muted/50 hover:translate-x-0.5"
+                    )}
+                  >
+                    {cat.name}
+                  </button>
                 ))}
-              </RadioGroup>
+              </div>
             ) : (
               <CategorySkeleton />
             )}
@@ -97,40 +154,54 @@ const FiltersContent = ({ categories }: { categories: Category[] }) => {
         </AccordionItem>
 
         {/* Condition Filter */}
-        <AccordionItem value="condition" className="rounded-2xl border border-border/40 bg-background">
-          <AccordionTrigger className="px-4 py-3 text-sm font-semibold text-foreground">
-            {t("condition")}
+        <AccordionItem value="condition" className="rounded-2xl border border-border/40 bg-card/50 dark:bg-card/30 shadow-xs overflow-hidden">
+          <AccordionTrigger className="px-4 py-3 text-sm font-semibold text-foreground hover:no-underline hover:bg-primary/5 transition-colors">
+            <span className="flex items-center gap-2">
+              {t("condition")}
+              {selectedCondition && (
+                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">1</span>
+              )}
+            </span>
           </AccordionTrigger>
-          <AccordionContent className="px-4 pb-4">
-            <RadioGroup 
-              value={selectedCondition} 
-              onValueChange={(val) => updateFilter("condition", val)}
-            >
+          <AccordionContent className="px-4 pb-4 pt-1">
+            {/* Segmented control */}
+            <div className="flex rounded-xl bg-muted p-1">
               {["new", "used"].map((cond) => (
-                <div key={cond} className="flex items-center gap-3">
-                  <RadioGroupItem value={cond} id={`cond-${cond}`} />
-                  <Label htmlFor={`cond-${cond}`} className="text-sm text-muted-foreground font-normal capitalize cursor-pointer flex-1">
-                    {t(cond)}
-                  </Label>
-                </div>
+                <button
+                  key={cond}
+                  type="button"
+                  onClick={() => updateFilter("condition", selectedCondition === cond ? null : cond)}
+                  className={cn(
+                    "flex-1 px-4 py-2 rounded-[10px] text-sm font-medium transition-all duration-200 capitalize",
+                    selectedCondition === cond
+                      ? "bg-primary text-primary-foreground shadow-sm"
+                      : "text-muted-foreground hover:text-foreground"
+                  )}
+                >
+                  {t(cond)}
+                </button>
               ))}
-            </RadioGroup>
+            </div>
           </AccordionContent>
         </AccordionItem>
 
         {/* Price Range Filter */}
-        <AccordionItem value="price" className="rounded-2xl border border-border/40 bg-background">
-          <AccordionTrigger className="px-4 py-3 text-sm font-semibold text-foreground">
-            {t("priceRange")}
+        <AccordionItem value="price" className="rounded-2xl border border-border/40 bg-card/50 dark:bg-card/30 shadow-xs overflow-hidden">
+          <AccordionTrigger className="px-4 py-3 text-sm font-semibold text-foreground hover:no-underline hover:bg-primary/5 transition-colors">
+            <span className="flex items-center gap-2">
+              {t("priceRange")}
+              {hasPriceFilter && (
+                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">1</span>
+              )}
+            </span>
           </AccordionTrigger>
-          <AccordionContent className="px-4 pb-4">
+          <AccordionContent className="px-4 pb-4 pt-1">
             <div className="space-y-4">
-              <div className="space-y-2">
+              <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-foreground">{t("selectRange")}</span>
-                  <span className="text-xs text-muted-foreground">
-                    ৳ {localPrice[0].toLocaleString()} - ৳ {localPrice[1].toLocaleString()}
-                  </span>
+                  <span className="text-sm text-foreground">৳ {localPrice[0].toLocaleString()}</span>
+                  <span className="text-xs text-muted-foreground">to</span>
+                  <span className="text-sm text-foreground">৳ {localPrice[1].toLocaleString()}</span>
                 </div>
                 <Slider
                   min={0}
@@ -153,55 +224,44 @@ const FiltersContent = ({ categories }: { categories: Category[] }) => {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
-
-
-      {/* Applied Chips */}
-      {(selectedCategory || selectedCondition) && (
-        <div className="flex flex-wrap gap-2 mt-4">
-          {selectedCategory && (
-            <button
-              type="button"
-              className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary"
-              onClick={() => updateFilter("category", null)}
-            >
-              {categories.find(c => c.slug === selectedCategory)?.name || selectedCategory}
-              <X className="h-3 w-3" />
-            </button>
-          )}
-          {selectedCondition && (
-            <button
-              type="button"
-              className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary"
-              onClick={() => updateFilter("condition", null)}
-            >
-              {selectedCondition}
-              <X className="h-3 w-3" />
-            </button>
-          )}
-        </div>
-      )}
-    </>
+    </div>
   );
 };
 
 const Filters = ({ categories = [], showAsSheet = false }: FiltersProps) => {
+  const { getFilter } = useSmartFilter();
+  const activeCount = ["category", "condition", "minPrice", "maxPrice"].filter(k => getFilter(k)).length;
+
   if (showAsSheet) {
     return (
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant="outline" size="lg" className="lg:hidden h-12 rounded-full">
+          <Button variant="outline" size="lg" className="lg:hidden h-12 rounded-full relative">
             <SlidersHorizontal className="h-4 w-4 mr-2" />
             Filters
+            {activeCount > 0 && (
+              <span className="absolute -top-1.5 -right-1.5 inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground shadow-sm">
+                {activeCount}
+              </span>
+            )}
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="w-[85%] sm:max-w-[85%]">
-          <SheetHeader>
-            <SheetTitle>Filters</SheetTitle>
+        <SheetContent side="bottom" className="h-[85vh] rounded-t-3xl">
+          <SheetHeader className="pb-2 border-b border-border/40">
+            <SheetTitle className="flex items-center gap-2">
+              <SlidersHorizontal className="h-4 w-4 text-primary" />
+              Filters
+              {activeCount > 0 && (
+                <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
+                  {activeCount}
+                </span>
+              )}
+            </SheetTitle>
             <SheetDescription>
               Refine your search results.
             </SheetDescription>
           </SheetHeader>
-          <ScrollArea className="h-[calc(100vh-120px)] px-2 mt-4">
+          <ScrollArea className="h-[calc(85vh-100px)] px-1 mt-4">
             <FiltersContent categories={categories} />
           </ScrollArea>
         </SheetContent>
@@ -210,7 +270,16 @@ const Filters = ({ categories = [], showAsSheet = false }: FiltersProps) => {
   }
 
   return (
-    <aside className="rounded-3xl border border-border/40 bg-background/80 p-6 shadow-sm sticky top-24">
+    <aside className="rounded-3xl border border-border/40 bg-card/50 dark:bg-card/30 p-6 shadow-sm sticky top-24">
+      <div className="flex items-center gap-2 mb-5 px-1">
+        <SlidersHorizontal className="h-4 w-4 text-primary" />
+        <h2 className="font-bold text-base text-foreground">Filters</h2>
+        {activeCount > 0 && (
+          <span className="inline-flex h-5 min-w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground px-1.5">
+            {activeCount}
+          </span>
+        )}
+      </div>
       <FiltersContent categories={categories} />
     </aside>
   );
