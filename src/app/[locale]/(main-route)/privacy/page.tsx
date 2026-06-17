@@ -103,7 +103,7 @@ export default function PrivacyPage() {
                       {section.subSections ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                           {section.subSections.map((sub, i) => (
-                            <div key={i} className="p-6 rounded-2xl bg-muted/30 border border-border/40">
+                            <div key={i} className="p-6 rounded-lg bg-muted/30 border border-border/40">
                               <h4 className="font-bold mb-4 text-primary">{sub.title}</h4>
                               <ul className="space-y-2">
                                 {sub.items.map((item, j) => (
@@ -119,7 +119,7 @@ export default function PrivacyPage() {
                       ) : section.items && (
                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                           {section.items.map((item, i) => (
-                            <li key={i} className="flex items-center gap-3 text-muted-foreground bg-muted/30 p-4 rounded-xl border border-border/40">
+                            <li key={i} className="flex items-center gap-3 text-muted-foreground bg-muted/30 p-4 rounded-lg border border-border/40">
                               <ShieldCheck className="w-4 h-4 text-primary" />
                               <span className="font-medium">{item}</span>
                             </li>
@@ -145,7 +145,7 @@ export default function PrivacyPage() {
                </div>
                <a 
                  href="mailto:privacy@becheden.com" 
-                 className="px-8 py-4 bg-primary text-primary-foreground font-bold rounded-2xl hover:opacity-90 transition-all shadow-lg shadow-primary/20 whitespace-nowrap"
+                 className="px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:opacity-90 transition-all shadow-lg shadow-primary/20 whitespace-nowrap"
                >
                  {t("footerBtn")}
                </a>

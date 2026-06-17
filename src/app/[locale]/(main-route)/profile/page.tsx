@@ -74,15 +74,15 @@ export default function ProfileDashboardPage() {
   if (roleLoading || loading) {
     return (
       <div className="space-y-6 animate-pulse">
-        <div className="h-32 w-full bg-muted rounded-xl" />
+        <div className="h-32 w-full bg-muted rounded-lg" />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="h-24 bg-muted rounded-xl" />
+            <div key={i} className="h-24 bg-muted rounded-lg" />
           ))}
         </div>
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="h-64 bg-muted rounded-xl" />
-          <div className="h-64 bg-muted rounded-xl" />
+          <div className="h-64 bg-muted rounded-lg" />
+          <div className="h-64 bg-muted rounded-lg" />
         </div>
       </div>
     );
@@ -262,7 +262,7 @@ export default function ProfileDashboardPage() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="h-50 flex items-center justify-center border-2 border-dashed border-primary/20 rounded-xl">
+                <div className="h-50 flex items-center justify-center border-2 border-dashed border-primary/20 rounded-lg">
                   <p className="text-sm text-muted-foreground italic">
                     {t("sections.performancePlaceholder")}
                   </p>
@@ -308,7 +308,7 @@ function SupportItem({ title, description }: { title: string; description: strin
 
 function TipCard({ title, description, icon: Icon }: { title: string; description: string; icon: any }) {
   return (
-    <div className="p-4 rounded-xl bg-card border border-border/50 shadow-sm transition-all hover:border-primary/30">
+    <div className="p-4 rounded-lg bg-card border border-border/50 shadow-sm transition-all hover:border-primary/30">
       <Icon className="h-6 w-6 text-primary mb-3" />
       <h4 className="text-sm font-bold mb-1">{title}</h4>
       <p className="text-xs text-muted-foreground leading-relaxed">{description}</p>
@@ -336,7 +336,7 @@ function StatsCard({
               <p className="text-sm font-medium text-muted-foreground">{title}</p>
               <h3 className="font-bold mt-1">{value}</h3>
             </div>
-            <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+            <div className="h-12 w-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
               <Icon className="h-6 w-6" />
             </div>
           </div>

@@ -53,7 +53,7 @@ export const AdListCard = ({ ad, isFavoriteInitial = false }: AdListCardProps) =
   };
 
   return (
-    <article className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30">
+    <article className="group relative overflow-hidden rounded-lg border border-border/40 bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/30">
       <Link href={`/ads/${ad.id}`} className="flex h-full">
         {/* Image */}
         <div className="relative w-36 sm:w-44 shrink-0 overflow-hidden">

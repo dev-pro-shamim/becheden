@@ -176,7 +176,7 @@ export default function CreateAdForm({ categories }: { categories: Category[] })
                 <p className="text-muted-foreground text-sm">{t("step1Desc")}</p>
               </div>
 
-              <Card className="rounded-2xl shadow-sm border-border/40">
+              <Card className="rounded-lg shadow-sm border-border/40">
                 <CardContent className="p-6 space-y-6">
                   <FormField
                     control={form.control}
@@ -195,7 +195,7 @@ export default function CreateAdForm({ categories }: { categories: Category[] })
                                 <FormControl>
                                   <RadioGroupItem value={cat._id} className="sr-only" />
                                 </FormControl>
-                                <FormLabel className={`flex flex-col items-center justify-center p-4 border rounded-xl cursor-pointer transition-all hover:bg-accent/50 ${field.value === cat._id ? "border-primary bg-primary/5 ring-1 ring-primary" : "border-border"}`}>
+                                <FormLabel className={`flex flex-col items-center justify-center p-4 border rounded-lg cursor-pointer transition-all hover:bg-accent/50 ${field.value === cat._id ? "border-primary bg-primary/5 ring-1 ring-primary" : "border-border"}`}>
                                   {cat.icon && (
                                     <div className="relative w-14 h-14 mb-2">
                                       <Image src={cat.icon} alt={cat.name} fill sizes="56px" className="object-contain dark:invert rounded-lg p-1" />
@@ -273,7 +273,7 @@ export default function CreateAdForm({ categories }: { categories: Category[] })
                 <p className="text-muted-foreground text-sm">{t("step2Desc")}</p>
               </div>
 
-              <Card className="rounded-2xl shadow-sm border-border/40">
+              <Card className="rounded-lg shadow-sm border-border/40">
                 <CardContent className="p-6 space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <FormField
@@ -323,7 +323,7 @@ export default function CreateAdForm({ categories }: { categories: Category[] })
                     control={form.control}
                     name="negotiable"
                     render={({ field }) => (
-                      <FormItem className="flex flex-row items-center justify-between rounded-xl border p-4 bg-muted/30">
+                      <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4 bg-muted/30">
                         <div className="space-y-0.5">
                           <FormLabel className="text-base font-semibold">{t("negotiableLabel")}</FormLabel>
                           <FormDescription>{t("negotiableDesc")}</FormDescription>
@@ -376,13 +376,13 @@ export default function CreateAdForm({ categories }: { categories: Category[] })
                 <p className="text-muted-foreground text-sm">{t("step3Desc")}</p>
               </div>
 
-              <Card className="rounded-2xl shadow-sm border-border/40">
+              <Card className="rounded-lg shadow-sm border-border/40">
                 <CardContent className="p-6 space-y-8">
                   <div className="space-y-4">
                     <FormLabel className="text-base font-semibold">{t("photosLabel")}</FormLabel>
                     <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                       {imagePreviews.map((preview, index) => (
-                        <div key={index} className="relative aspect-square rounded-xl overflow-hidden border group">
+                        <div key={index} className="relative aspect-square rounded-lg overflow-hidden border group">
                           <Image src={preview} alt={`Preview ${index}`} fill sizes="(min-width: 768px) 128px, 45vw" className="object-cover" />
                           <button
                             type="button"
@@ -394,7 +394,7 @@ export default function CreateAdForm({ categories }: { categories: Category[] })
                         </div>
                       ))}
                       {images.length < 5 && (
-                        <label className="flex flex-col items-center justify-center aspect-square border-2 border-dashed border-muted-foreground/25 rounded-xl cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-all">
+                        <label className="flex flex-col items-center justify-center aspect-square border-2 border-dashed border-muted-foreground/25 rounded-lg cursor-pointer hover:border-primary/50 hover:bg-primary/5 transition-all">
                           <Upload className="w-6 h-6 text-muted-foreground mb-2" />
                           <span className="text-xs font-medium text-muted-foreground">{t("uploadLabel")}</span>
                           <input type="file" multiple accept="image/*" className="hidden" onChange={handleImageChange} />
@@ -447,7 +447,7 @@ export default function CreateAdForm({ categories }: { categories: Category[] })
                     )}
                   />
 
-                  <div className="p-4 bg-muted/30 rounded-xl border border-border/50">
+                  <div className="p-4 bg-muted/30 rounded-lg border border-border/50">
                     <p className="text-xs text-muted-foreground text-center">
                       {t("termsNotice")}
                     </p>

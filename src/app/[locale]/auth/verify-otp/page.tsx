@@ -252,13 +252,13 @@ const VerifyOtpForm = () => {
                 </div>
 
                 {status === 'success' ? (
-                  <p className="rounded-2xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">
+                  <p className="rounded-lg border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">
                     A fresh verification code is on its way. Give it a moment to
                     arrive.
                   </p>
                 ) : null}
                 {status === 'error' ? (
-                  <p className="rounded-2xl border border-destructive/80 bg-destructive/30 p-3 text-sm text-red-500">
+                  <p className="rounded-lg border border-destructive/80 bg-destructive/30 p-3 text-sm text-red-500">
                     Unable to process your request right now. Please try again
                     shortly.
                   </p>

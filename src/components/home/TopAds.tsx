@@ -3,6 +3,7 @@ import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { Ad } from "@/types/ad.type";
 import { useTranslations } from "next-intl";
+import SectionHeader from "@/components/common/SectionHeader";
 
 interface TopAdsProps {
   ads: Ad[];
@@ -14,12 +15,10 @@ export default function TopAds({ ads }: TopAdsProps) {
   return (
     <section className="py-10">
       <div className="custom-width mx-auto px-4">
-        <div className="mb-6 flex items-end justify-between">
-          <h2 className="text-2xl font-semibold">{t("topTitle")}</h2>
-          <Link href="/ads" className="text-primary hover:underline">
-            {t("seeAll")}
-          </Link>
-        </div>
+        <SectionHeader 
+          title={t("topTitle")}
+          actionLink={{ text: t("seeAll"), href: "/ads" }}
+        />
         
         {(!ads || ads.length === 0) ? (
           <div className="text-center py-12 text-muted-foreground bg-card rounded-lg border border-dashed">
@@ -31,7 +30,7 @@ export default function TopAds({ ads }: TopAdsProps) {
               <Link
                 key={ad._id || ad.id}
                 href={`/ads/${ad._id || ad.id}`}
-                className="group rounded-2xl border bg-card shadow-sm overflow-hidden"
+                className="group rounded-lg border bg-card shadow-sm overflow-hidden"
               >
                 <div className="aspect-6/5 relative">
                   <Image

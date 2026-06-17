@@ -58,7 +58,7 @@ export default function ProfileAlertsPage() {
             {activeAlerts.map((alert) => (
               <div
                 key={alert.title}
-                className="flex flex-col gap-3 rounded-xl border border-border/40 bg-muted/30 p-4 dark:bg-muted/20"
+                className="flex flex-col gap-3 rounded-lg border border-border/40 bg-muted/30 p-4 dark:bg-muted/20"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
@@ -101,7 +101,7 @@ export default function ProfileAlertsPage() {
           </CardHeader>
           <CardContent className="space-y-4">
             {savedSearches.map((search) => (
-              <div key={search.title} className="rounded-xl border border-border/40 bg-muted/30 p-4 text-sm dark:bg-muted/20">
+              <div key={search.title} className="rounded-lg border border-border/40 bg-muted/30 p-4 text-sm dark:bg-muted/20">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="font-medium text-foreground">{search.title}</p>

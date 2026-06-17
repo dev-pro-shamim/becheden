@@ -35,7 +35,7 @@ const HeroSearch = ({ categories }: HeroSearchProps) => {
     <form onSubmit={handleSearch} className="flex flex-col sm:flex-row gap-2 sm:gap-0 w-full max-w-2xl">
       {/* Category Dropdown */}
       <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-        <SelectTrigger className="data-[size=default]:h-12 w-full sm:w-44 rounded-xl sm:rounded-r-none border-input bg-background px-4 text-sm shadow-xs">
+        <SelectTrigger className="data-[size=default]:h-12 w-full sm:w-44 rounded-lg sm:rounded-r-none border-input bg-background px-4 text-sm shadow-xs">
           <SelectValue placeholder="All Categories" />
         </SelectTrigger>
         <SelectContent align="start">
@@ -55,7 +55,7 @@ const HeroSearch = ({ categories }: HeroSearchProps) => {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="What are you looking for?"
-          className="h-12 w-full border-input bg-background px-4 pl-11 text-sm sm:rounded-none rounded-xl shadow-xs"
+          className="h-12 w-full border-input bg-background px-4 pl-11 text-sm sm:rounded-none rounded-lg shadow-xs"
         />
         <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
       </div>
@@ -64,7 +64,7 @@ const HeroSearch = ({ categories }: HeroSearchProps) => {
       <Button
         type="submit"
         size="lg"
-        className="h-12 rounded-xl sm:rounded-l-none px-8 text-base font-semibold shadow-lg shadow-primary/25"
+        className="h-12 rounded-lg sm:rounded-l-none px-8 text-base font-semibold shadow-lg shadow-primary/25"
       >
         Search
       </Button>

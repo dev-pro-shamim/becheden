@@ -20,7 +20,7 @@ export default function SellerInfo({ seller, location }: SellerInfoProps) {
     .toUpperCase();
 
   return (
-    <div className="rounded-xl border border-border/40 bg-card">
+    <div className="rounded-lg border border-border/40 bg-card">
       <div className="p-6 pb-4 border-b border-border/40">
         <h3 className="text-lg font-semibold">{t("sellerInfo")}</h3>
       </div>

@@ -119,7 +119,7 @@ function SidebarContent({
           <div className="h-3 w-16 bg-muted rounded" />
           <div className="space-y-2">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="h-12 w-full bg-muted rounded-xl" />
+              <div key={i} className="h-12 w-full bg-muted rounded-lg" />
             ))}
           </div>
         </div>
@@ -187,7 +187,7 @@ function SidebarContent({
                   <Link
                     href={href}
                     className={cn(
-                      "group flex items-center justify-between gap-3 rounded-xl border px-3 py-2 transition",
+                      "group flex items-center justify-between gap-3 rounded-lg border px-3 py-2 transition",
                       active
                         ? "border-primary/50 bg-primary/10 text-primary"
                         : "border-transparent text-muted-foreground hover:border-border hover:bg-muted/60"
@@ -288,7 +288,7 @@ export default function ProfileSidebar({
    <div>
      <aside
       className={cn(
-        "hidden rounded-xl border bg-card/95 p-5 shadow-sm lg:flex flex-col gap-4 sticky top-24",
+        "hidden rounded-lg border bg-card/95 p-5 shadow-sm lg:flex flex-col gap-4 sticky top-24",
         className
       )}
     >

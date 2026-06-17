@@ -98,7 +98,7 @@ export default async function MyLotteryPage() {
                 {upcomingDraws.map((draw: any) => (
                   <div
                     key={draw.lotteryId}
-                    className="flex flex-col gap-3 rounded-xl border border-border/40 bg-muted/30 p-4 text-sm dark:bg-muted/20"
+                    className="flex flex-col gap-3 rounded-lg border border-border/40 bg-muted/30 p-4 text-sm dark:bg-muted/20"
                   >
                     <div className="flex flex-wrap items-center justify-between gap-2">
                       <div>
@@ -114,7 +114,7 @@ export default async function MyLotteryPage() {
                 ))}
               </div>
             ) : (
-              <div className="flex flex-col items-center justify-center py-8 text-center text-muted-foreground bg-muted/20 rounded-xl border border-dashed border-border/60">
+              <div className="flex flex-col items-center justify-center py-8 text-center text-muted-foreground bg-muted/20 rounded-lg border border-dashed border-border/60">
                 <Ticket className="h-8 w-8 mb-2 opacity-20" />
                 <p>{t("noDraws")}</p>
               </div>

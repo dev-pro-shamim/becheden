@@ -78,7 +78,7 @@ const Footer = () => {
         <div className="grid gap-12 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div className="space-y-6">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-secondary dark:bg-primary/20 text-primary">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary dark:bg-primary/20 text-primary">
                 <Globe className="h-6 w-6" />
               </div>
               <p className="text-xl font-bold text-foreground tracking-tight">Beche <span className="text-primary">Den</span></p>

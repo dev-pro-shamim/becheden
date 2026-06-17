@@ -83,7 +83,7 @@ export default function Messages({ thread, endRef }: Props) {
                   className={`flex ${m.fromMe ? 'justify-end' : 'justify-start'}`}
                 >
                   <div
-                    className={`max-w-[80%] rounded-2xl px-3 py-2 text-sm shadow ${
+                    className={`max-w-[80%] rounded-lg px-3 py-2 text-sm shadow ${
                       m.fromMe
                         ? 'bg-primary text-primary-foreground rounded-br-sm'
                         : 'bg-background rounded-bl-sm'

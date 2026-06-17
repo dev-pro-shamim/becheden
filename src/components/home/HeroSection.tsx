@@ -62,7 +62,7 @@ const HeroSection = async () => {
             <HeroSearch categories={categories} />
 
             {/* Quick Stats */}
-            <div className="flex flex-wrap items-center gap-6 pt-2">
+            <div className="hidden md:flex flex-wrap items-center gap-6 pt-2">
               <div className="flex items-center gap-2.5">
                 <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-secondary dark:bg-primary/20 text-primary text-xs font-bold">
                   10K+

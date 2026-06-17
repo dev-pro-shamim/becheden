@@ -89,7 +89,7 @@ const PaymentStatusContent = () => {
           <p className="text-muted-foreground">{message}</p>
           
           {tokens.length > 0 && (
-            <div className="mt-6 p-4 rounded-2xl bg-primary/5 border border-primary/10">
+            <div className="mt-6 p-4 rounded-lg bg-primary/5 border border-primary/10">
               <p className="text-xs font-bold text-primary uppercase tracking-wider mb-3 flex items-center justify-center gap-2">
                 <Ticket className="h-3 w-3" /> Your Lucky Tokens
               </p>
@@ -114,12 +114,12 @@ const PaymentStatusContent = () => {
           )}
         </CardContent>
         <CardFooter className="flex flex-col gap-3">
-          <Button asChild className="w-full font-bold py-6 rounded-xl">
+          <Button asChild className="w-full font-bold py-6 rounded-lg">
             <Link href={type === 'subscription' ? '/profile/subscription' : '/profile/my-lottery'}>
               {type === 'subscription' ? 'Go to Subscription' : 'Go to My Lottery'} <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
-          <Button variant="outline" asChild className="w-full py-6 rounded-xl">
+          <Button variant="outline" asChild className="w-full py-6 rounded-lg">
             <Link href="/">Back to Home</Link>
           </Button>
         </CardFooter>

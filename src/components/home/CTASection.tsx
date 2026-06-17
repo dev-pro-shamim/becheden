@@ -7,7 +7,7 @@ const CTASection = async () => {
   const t = await getTranslations("CTA");
 
   return (
-    <section className="py-16 lg:py-20 relative overflow-hidden">
+    <section className="py-16 relative overflow-hidden">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-linear-to-r from-emerald-600 via-emerald-500 to-green-600 dark:from-emerald-800 dark:via-emerald-700 dark:to-green-800" />
 
@@ -31,7 +31,7 @@ const CTASection = async () => {
       <div className="custom-width mx-auto px-4 lg:px-6 relative z-10">
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
           {/* Icon */}
-          <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/15 backdrop-blur-sm mb-8">
+          <div className="flex h-16 w-16 items-center justify-center rounded-lg bg-white/15 backdrop-blur-sm mb-8">
             <Sparkles className="h-8 w-8 text-white" />
           </div>
 
@@ -48,7 +48,7 @@ const CTASection = async () => {
             <Button
               asChild
               size="lg"
-              className="bg-white text-primary hover:bg-secondary shadow-xl shadow-black/10 rounded-xl px-8 h-13 text-base font-semibold"
+              className="bg-white text-primary hover:bg-secondary shadow-xl shadow-black/10 rounded-lg px-8 h-13 text-base font-semibold"
             >
               <Link href="/ads/create">
                 {t("button1")}
@@ -59,7 +59,7 @@ const CTASection = async () => {
               asChild
               size="lg"
               variant="outline"
-              className="border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white rounded-xl px-8 h-13 text-base font-semibold backdrop-blur-sm"
+              className="border-white/30 bg-white/10 text-white hover:bg-white/20 hover:text-white rounded-lg px-8 h-13 text-base font-semibold backdrop-blur-sm"
             >
               <Link href="/ads">{t("button2")}</Link>
             </Button>

@@ -26,7 +26,7 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
   return (
     <div className="space-y-4">
       {/* Main Image */}
-      <div className="relative aspect-17/12 overflow-hidden rounded-2xl border border-border/40 bg-muted/20">
+      <div className="relative aspect-17/12 overflow-hidden rounded-lg border border-border/40 bg-muted/20">
         <Image
           src={images[currentIndex]}
           alt={`${title} - Image ${currentIndex + 1}`}

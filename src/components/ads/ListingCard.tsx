@@ -32,7 +32,7 @@ const ListingCard = ({
   return (
     <Link
       href={`/ads/${id || 'item'}`}
-      className="group rounded-2xl border bg-card shadow-sm overflow-hidden relative"
+      className="group rounded-lg border bg-card shadow-sm overflow-hidden relative"
     >
       <div className="aspect-6/5 relative">
         <Image
