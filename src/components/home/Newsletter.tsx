@@ -20,7 +20,7 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="py-16 lg:py-20">
+    <section className="py-16">
       <div className="custom-width mx-auto px-4 lg:px-6">
         <div className="relative overflow-hidden rounded-3xl border border-border dark:border-primary/20 bg-linear-to-br from-secondary via-background to-secondary dark:from-primary/5 dark:via-background dark:to-primary/5 p-8 lg:p-14">
           {/* Decorative */}
@@ -31,7 +31,7 @@ const Newsletter = () => {
             {/* Left Content */}
             <div className="flex-1 text-center lg:text-left">
               <div className="inline-flex items-center gap-3 mb-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-secondary dark:bg-primary/20 text-primary">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-secondary dark:bg-primary/20 text-primary">
                   <Mail className="h-6 w-6" />
                 </div>
               </div>
@@ -44,7 +44,7 @@ const Newsletter = () => {
             {/* Right Form */}
             <div className="w-full lg:w-auto lg:min-w-105">
               {subscribed ? (
-                <div className="flex items-center gap-3 rounded-xl bg-secondary dark:bg-primary/10 px-6 py-4">
+                <div className="flex items-center gap-3 rounded-lg bg-secondary dark:bg-primary/10 px-6 py-4">
                   <CheckCircle className="h-6 w-6 text-primary shrink-0" />
                   <p className="text-primary font-medium">
                     Thanks for subscribing! Check your inbox.
@@ -65,7 +65,7 @@ const Newsletter = () => {
                   </div>
                   <Button
                     type="submit"
-                    className="h-13 rounded-xl px-8 font-semibold shadow-lg shadow-primary/25"
+                    className="h-13 rounded-lg px-8 font-semibold shadow-lg shadow-primary/25"
                   >
                     {t("button")}
                     <Send className="ml-2 h-4 w-4" />

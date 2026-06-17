@@ -200,13 +200,13 @@ const ResetPasswordForm = () => {
                 />
 
                 {status === 'success' ? (
-                  <p className="rounded-2xl border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">
+                  <p className="rounded-lg border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">
                     Your password was reset successfully. You can now log in
                     with your new credentials.
                   </p>
                 ) : null}
                 {status === 'error' ? (
-                  <p className="rounded-2xl border border-destructive/40 bg-destructive/10 p-3 text-sm text-destructive">
+                  <p className="rounded-lg border border-destructive/40 bg-destructive/10 p-3 text-sm text-destructive">
                     Something went wrong. Please try again or request a fresh
                     reset link.
                   </p>

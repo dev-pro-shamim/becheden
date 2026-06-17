@@ -40,7 +40,7 @@ const SafetyPage = () => {
                 { icon: CheckCircle2, title: t("tips.verified.title"), desc: t("tips.verified.desc") }
               ].map((tip, index) => (
                 <div key={index} className="group p-8 rounded-3xl border border-border bg-card hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500">
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-14 h-14 rounded-lg bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
                     <tip.icon className="w-7 h-7 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">{tip.title}</h3>
@@ -55,7 +55,7 @@ const SafetyPage = () => {
             <Card className="overflow-hidden border-none shadow-xl bg-linear-to-br from-red-50 to-white dark:from-red-950/20 dark:to-background">
               <div className="p-8">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-red-100 dark:bg-red-900/30 rounded-2xl">
+                  <div className="p-3 bg-red-100 dark:bg-red-900/30 rounded-lg">
                     <AlertCircle className="w-8 h-8 text-destructive" />
                   </div>
                   <div>
@@ -69,11 +69,11 @@ const SafetyPage = () => {
                 <div className="flex flex-wrap gap-4">
                   <a 
                     href="mailto:support@becheden.com" 
-                    className="inline-flex items-center px-6 py-3 rounded-xl bg-destructive text-destructive-foreground font-semibold hover:opacity-90 transition-opacity"
+                    className="inline-flex items-center px-6 py-3 rounded-lg bg-destructive text-destructive-foreground font-semibold hover:opacity-90 transition-opacity"
                   >
                     {t("contactSupport")}
                   </a>
-                  <button className="inline-flex items-center px-6 py-3 rounded-xl border border-destructive/20 font-semibold hover:bg-destructive/5 transition-colors">
+                  <button className="inline-flex items-center px-6 py-3 rounded-lg border border-destructive/20 font-semibold hover:bg-destructive/5 transition-colors">
                     {t("learnHowToReport")}
                   </button>
                 </div>
@@ -83,7 +83,7 @@ const SafetyPage = () => {
             <Card className="overflow-hidden border-none shadow-xl bg-linear-to-br from-primary/5 to-white dark:from-primary/10 dark:to-background">
               <div className="p-8">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="p-3 bg-primary/10 rounded-2xl">
+                  <div className="p-3 bg-primary/10 rounded-lg">
                     <Phone className="w-8 h-8 text-primary" />
                   </div>
                   <div>
@@ -95,7 +95,7 @@ const SafetyPage = () => {
                   {t("emergencyDesc")}
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <div className="flex items-center gap-2 px-6 py-3 rounded-xl bg-primary text-primary-foreground font-semibold">
+                  <div className="flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold">
                     <span className="flex items-center gap-2">
                       <Info className="w-5 h-5" />
                       999 - Emergency
@@ -103,7 +103,7 @@ const SafetyPage = () => {
                   </div>
                   <a 
                     href="mailto:support@becheden.com" 
-                    className="inline-flex items-center px-6 py-3 rounded-xl border border-primary/20 font-semibold hover:bg-primary/5 transition-colors text-primary"
+                    className="inline-flex items-center px-6 py-3 rounded-lg border border-primary/20 font-semibold hover:bg-primary/5 transition-colors text-primary"
                   >
                     {t("contactSupport")}
                   </a>

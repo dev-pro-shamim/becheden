@@ -106,7 +106,7 @@ const FiltersContent = ({ categories }: { categories: Category[] }) => {
 
       <Accordion type="multiple" defaultValue={["category", "condition", "price"]} className="space-y-3">
         {/* Category Filter */}
-        <AccordionItem value="category" className="rounded-2xl border border-border/40 bg-card/50 dark:bg-card/30 shadow-xs overflow-hidden">
+        <AccordionItem value="category" className="rounded-lg border border-border/40 bg-card/50 dark:bg-card/30 shadow-xs overflow-hidden">
           <AccordionTrigger className="px-4 py-3 text-sm font-semibold text-foreground hover:no-underline hover:bg-primary/5 transition-colors">
             <span className="flex items-center gap-2">
               {t("category")}
@@ -123,7 +123,7 @@ const FiltersContent = ({ categories }: { categories: Category[] }) => {
                   type="button"
                   onClick={() => updateFilter("category", null)}
                   className={cn(
-                    "w-full text-left px-3 py-2 rounded-xl text-sm transition-all duration-200 active:scale-[0.98]",
+                    "w-full text-left px-3 py-2 rounded-lg text-sm transition-all duration-200 active:scale-[0.98]",
                     !selectedCategory
                       ? "bg-primary/10 text-primary font-medium"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted/50 hover:translate-x-0.5"
@@ -137,7 +137,7 @@ const FiltersContent = ({ categories }: { categories: Category[] }) => {
                     type="button"
                     onClick={() => updateFilter("category", cat.slug)}
                     className={cn(
-                      "w-full text-left px-3 py-2 rounded-xl text-sm transition-all duration-200 active:scale-[0.98]",
+                      "w-full text-left px-3 py-2 rounded-lg text-sm transition-all duration-200 active:scale-[0.98]",
                       selectedCategory === cat.slug
                         ? "bg-primary/10 text-primary font-medium"
                         : "text-muted-foreground hover:text-foreground hover:bg-muted/50 hover:translate-x-0.5"
@@ -154,7 +154,7 @@ const FiltersContent = ({ categories }: { categories: Category[] }) => {
         </AccordionItem>
 
         {/* Condition Filter */}
-        <AccordionItem value="condition" className="rounded-2xl border border-border/40 bg-card/50 dark:bg-card/30 shadow-xs overflow-hidden">
+        <AccordionItem value="condition" className="rounded-lg border border-border/40 bg-card/50 dark:bg-card/30 shadow-xs overflow-hidden">
           <AccordionTrigger className="px-4 py-3 text-sm font-semibold text-foreground hover:no-underline hover:bg-primary/5 transition-colors">
             <span className="flex items-center gap-2">
               {t("condition")}
@@ -165,7 +165,7 @@ const FiltersContent = ({ categories }: { categories: Category[] }) => {
           </AccordionTrigger>
           <AccordionContent className="px-4 pb-4 pt-1">
             {/* Segmented control */}
-            <div className="flex rounded-xl bg-muted p-1">
+            <div className="flex rounded-lg bg-muted p-1">
               {["new", "used"].map((cond) => (
                 <button
                   key={cond}
@@ -186,7 +186,7 @@ const FiltersContent = ({ categories }: { categories: Category[] }) => {
         </AccordionItem>
 
         {/* Price Range Filter */}
-        <AccordionItem value="price" className="rounded-2xl border border-border/40 bg-card/50 dark:bg-card/30 shadow-xs overflow-hidden">
+        <AccordionItem value="price" className="rounded-lg border border-border/40 bg-card/50 dark:bg-card/30 shadow-xs overflow-hidden">
           <AccordionTrigger className="px-4 py-3 text-sm font-semibold text-foreground hover:no-underline hover:bg-primary/5 transition-colors">
             <span className="flex items-center gap-2">
               {t("priceRange")}
@@ -236,7 +236,7 @@ const Filters = ({ categories = [], showAsSheet = false }: FiltersProps) => {
     return (
       <Sheet>
         <SheetTrigger asChild>
-          <Button variant="outline" size="lg" className="lg:hidden h-12 rounded-full relative">
+          <Button variant="outline" className="lg:hidden h-10 rounded-lg relative px-4">
             <SlidersHorizontal className="h-4 w-4 mr-2" />
             Filters
             {activeCount > 0 && (

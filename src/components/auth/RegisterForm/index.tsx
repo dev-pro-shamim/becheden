@@ -414,11 +414,11 @@ const RegisterForm = () => {
                             <FormControl>
                               <div className="relative">
                                 {storeImagePreview ? (
-                                  <div className="relative rounded-2xl border-2 border-border/60 bg-muted/10 p-2">
+                                  <div className="relative rounded-lg border-2 border-border/60 bg-muted/10 p-2">
                                     <img
                                       src={storeImagePreview}
                                       alt="Store image preview"
-                                      className="h-40 w-full rounded-xl object-cover"
+                                      className="h-40 w-full rounded-lg object-cover"
                                     />
                                     <button
                                       type="button"
@@ -434,7 +434,7 @@ const RegisterForm = () => {
                                 ) : (
                                   <label
                                     htmlFor="storeImage"
-                                    className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-border/60 bg-muted/10 p-6 transition-colors hover:border-primary/40 hover:bg-muted/20"
+                                    className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-border/60 bg-muted/10 p-6 transition-colors hover:border-primary/40 hover:bg-muted/20"
                                   >
                                     <svg
                                       className="h-8 w-8 text-muted-foreground"
@@ -500,11 +500,11 @@ const RegisterForm = () => {
                             <FormControl>
                               <div className="relative">
                                 {tradeLicencePreview ? (
-                                  <div className="relative rounded-2xl border-2 border-border/60 bg-muted/10 p-2">
+                                  <div className="relative rounded-lg border-2 border-border/60 bg-muted/10 p-2">
                                     <img
                                       src={tradeLicencePreview}
                                       alt="Trade licence preview"
-                                      className="h-40 w-full rounded-xl object-cover"
+                                      className="h-40 w-full rounded-lg object-cover"
                                     />
                                     <button
                                       type="button"
@@ -520,7 +520,7 @@ const RegisterForm = () => {
                                 ) : (
                                   <label
                                     htmlFor="tradeLicence"
-                                    className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-border/60 bg-muted/10 p-6 transition-colors hover:border-primary/40 hover:bg-muted/20"
+                                    className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border-2 border-dashed border-border/60 bg-muted/10 p-6 transition-colors hover:border-primary/40 hover:bg-muted/20"
                                   >
                                     <svg
                                       className="h-8 w-8 text-muted-foreground"

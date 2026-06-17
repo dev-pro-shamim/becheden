@@ -79,11 +79,11 @@ export default function FaqPage() {
                 <AccordionItem 
                   key={index} 
                   value={`item-${index}`} 
-                  className="border rounded-2xl bg-card px-6 border-border/60 hover:border-primary/30 transition-all duration-300 shadow-sm overflow-hidden"
+                  className="border rounded-lg bg-card px-6 border-border/60 hover:border-primary/30 transition-all duration-300 shadow-sm overflow-hidden"
                 >
                   <AccordionTrigger className="text-xl font-bold text-foreground hover:text-primary hover:no-underline py-6 text-left">
                     <div className="flex items-center gap-4">
-                      <div className="p-2 bg-muted rounded-xl group-hover:bg-primary/10 transition-colors">
+                      <div className="p-2 bg-muted rounded-lg group-hover:bg-primary/10 transition-colors">
                         <faq.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary" />
                       </div>
                       {faq.question}
@@ -105,13 +105,13 @@ export default function FaqPage() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a 
                   href="/contact" 
-                  className="px-8 py-4 bg-primary text-primary-foreground font-bold rounded-2xl hover:opacity-90 transition-all shadow-lg shadow-primary/20"
+                  className="px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:opacity-90 transition-all shadow-lg shadow-primary/20"
                 >
                   {t("footerBtn1")}
                 </a>
                 <a 
                   href="/safety" 
-                  className="px-8 py-4 bg-secondary text-secondary-foreground font-bold rounded-2xl hover:bg-secondary/80 transition-all"
+                  className="px-8 py-4 bg-secondary text-secondary-foreground font-bold rounded-lg hover:bg-secondary/80 transition-all"
                 >
                   {t("footerBtn2")}
                 </a>

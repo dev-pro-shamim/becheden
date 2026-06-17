@@ -149,7 +149,7 @@ const LoginForm = ({ redirectPath }: { redirectPath: string }) => {
                           <Input
                             type="email"
                             placeholder="student@example.com"
-                            className="rounded-2xl border-border/40 bg-background/95 px-4 py-5"
+                            className="rounded-lg border-border/40 bg-background/95 px-4 py-5"
                             {...field}
                             value={field.value || ''}
                           />
@@ -180,7 +180,7 @@ const LoginForm = ({ redirectPath }: { redirectPath: string }) => {
                             <Input
                               type={showPassword ? 'text' : 'password'}
                               placeholder="••••••••"
-                              className="rounded-2xl border-border/40 bg-background/95 px-4 py-5 pr-12"
+                              className="rounded-lg border-border/40 bg-background/95 px-4 py-5 pr-12"
                               {...field}
                               value={field.value || ''}
                             />

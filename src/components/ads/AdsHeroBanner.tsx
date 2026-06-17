@@ -35,7 +35,7 @@ const AdsHeroBanner = () => {
               placeholder={t("bannerSearchPlaceholder")}
               defaultValue={getFilter("searchTerm")}
               onChange={(e) => updateFilter("searchTerm", e.target.value, 500)}
-              className="h-14 w-full bg-card dark:bg-card border-border/60 pl-12 pr-4 text-base rounded-2xl shadow-lg shadow-primary/5 focus-visible:ring-primary/30"
+              className="h-14 w-full bg-card dark:bg-card border-border/60 pl-12 pr-4 text-base rounded-lg shadow-lg shadow-primary/5 focus-visible:ring-primary/30"
             />
           </div>
 

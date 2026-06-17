@@ -12,7 +12,7 @@ export function ProfilePageHeader({ title, description, actions, className }: Pr
   return (
     <header
       className={cn(
-        "flex flex-col gap-4 rounded-xl bg-linear-to-r from-primary/5 via-primary/10 to-primary/5 p-5 shadow-sm dark:from-primary/10 dark:via-primary/15 dark:to-primary/10",
+        "flex flex-col gap-4 rounded-lg bg-linear-to-r from-primary/5 via-primary/10 to-primary/5 p-5 shadow-sm dark:from-primary/10 dark:via-primary/15 dark:to-primary/10",
         "border border-primary/20",
         "lg:flex-row lg:items-center lg:justify-between",
         className

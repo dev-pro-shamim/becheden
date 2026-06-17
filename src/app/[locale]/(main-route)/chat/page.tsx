@@ -615,7 +615,7 @@ function ChatContent() {
         <div className="custom-width mx-auto h-full px-4 py-3 overflow-hidden">
           <div className="grid h-full min-h-0 grid-cols-1 gap-3 lg:grid-cols-[320px_minmax(0,1fr)] lg:gap-4">
             <Sidebar
-              className="hidden h-full min-h-0 overflow-hidden rounded-xl border bg-card lg:block"
+              className="hidden h-full min-h-0 overflow-hidden rounded-lg border bg-card lg:block"
               conversations={filteredConversations.map(c => ({
                 id: String(c.id),
                 name: c.name,
@@ -667,7 +667,7 @@ function ChatContent() {
               </SheetContent>
             </Sheet>
 
-            <div className="flex h-full min-h-0 flex-col overflow-hidden rounded-xl border bg-card">
+            <div className="flex h-full min-h-0 flex-col overflow-hidden rounded-lg border bg-card">
               <ChatHeader
                 name={activeConversationMeta.name}
                 avatar={activeConversationMeta.avatar}

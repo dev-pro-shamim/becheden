@@ -1,8 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, ArrowRight } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { Ad } from "@/types/ad.type";
 import { useTranslations } from "next-intl";
+import SectionHeader from "@/components/common/SectionHeader";
 
 interface LatestAdsProps {
   ads: Ad[];
@@ -12,24 +13,15 @@ export default function LatestAds({ ads }: LatestAdsProps) {
   const t = useTranslations("Home");
 
   return (
-    <section className="py-16 lg:py-20 bg-linear-to-b from-secondary/50 to-transparent dark:from-primary/5">
+    <section className="py-10 bg-linear-to-b from-secondary/50 to-transparent dark:from-primary/5">
       <div className="custom-width mx-auto px-4">
-        <div className="mb-8 flex items-end justify-between">
-          <div>
-            <span className="inline-flex items-center gap-2 rounded-full bg-secondary dark:bg-primary/15 px-4 py-1.5 text-sm font-medium text-primary mb-3">
-              <span className="flex h-2 w-2 rounded-full bg-primary" />
-              New Arrivals
-            </span>
-            <h2 className="text-2xl lg:text-3xl font-bold text-foreground">{t("latestTitle")}</h2>
-          </div>
-          <Link href="/ads" className="inline-flex items-center gap-1.5 text-primary hover:text-primary/80 font-medium text-sm transition-colors">
-            {t("seeAll")}
-            <ArrowRight className="h-4 w-4" />
-          </Link>
-        </div>
+        <SectionHeader 
+          title={t("latestTitle")}
+          actionLink={{ text: t("seeAll"), href: "/ads" }}
+        />
         
         {(!ads || ads.length === 0) ? (
-          <div className="text-center py-16 text-muted-foreground bg-card rounded-2xl border border-dashed border-border dark:border-primary/20">
+          <div className="text-center py-16 text-muted-foreground bg-card rounded-lg border border-dashed border-border dark:border-primary/20">
             <p>{t("noLatestAds")}</p>
           </div>
         ) : (
@@ -38,7 +30,7 @@ export default function LatestAds({ ads }: LatestAdsProps) {
               <Link
                 key={ad._id || ad.id}
                 href={`/ads/${ad._id || ad.id}`}
-                className="group rounded-2xl border border-border/50 bg-card shadow-sm overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/40"
+                className="group rounded-lg border border-border/50 bg-card shadow-sm overflow-hidden transition-all hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 hover:border-primary/40"
               >
                 <div className="aspect-6/5 relative">
                   <Image

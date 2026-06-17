@@ -13,7 +13,7 @@ type Props = {
 export default function AdSummary({ ad }: Props) {
   if (!ad) {
     return (
-      <aside className="hidden h-fit rounded-xl border bg-card p-6 text-center text-sm text-muted-foreground lg:block">
+      <aside className="hidden h-fit rounded-lg border bg-card p-6 text-center text-sm text-muted-foreground lg:block">
         No ad selected.
       </aside>
     );
@@ -22,7 +22,7 @@ export default function AdSummary({ ad }: Props) {
   const { image, title, price, location, posted, link } = ad;
 
   return (
-    <aside className="hidden lg:block rounded-xl border bg-card overflow-hidden">
+    <aside className="hidden lg:block rounded-lg border bg-card overflow-hidden">
       <div className="relative h-48 w-full">
         {image ? (
           <Image

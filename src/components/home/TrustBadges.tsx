@@ -65,11 +65,11 @@ function StatCard({ icon: Icon, label, value, suffix }: StatItem) {
   return (
     <div
       ref={ref}
-      className="group relative overflow-hidden rounded-2xl border border-border dark:border-primary/20 bg-card p-6 lg:p-8 transition-all hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1"
+      className="group relative overflow-hidden rounded-lg border border-border dark:border-primary/20 bg-card p-6 lg:p-8 transition-all hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1"
     >
       <div className="pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full bg-primary/5 blur-2xl transition group-hover:bg-primary/10" />
       <div className="relative z-10 flex flex-col items-center text-center gap-3">
-        <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-secondary dark:bg-primary/20 text-primary transition group-hover:scale-110 group-hover:bg-primary/15">
+        <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-secondary dark:bg-primary/20 text-primary transition group-hover:scale-110 group-hover:bg-primary/15">
           <Icon className="h-7 w-7" />
         </div>
         <div>
@@ -86,7 +86,7 @@ function StatCard({ icon: Icon, label, value, suffix }: StatItem) {
 
 const TrustBadges = () => {
   return (
-    <section className="py-16 lg:py-20 relative">
+    <section className="py-16 relative">
       <div className="custom-width mx-auto px-4 lg:px-6">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {stats.map((stat) => (

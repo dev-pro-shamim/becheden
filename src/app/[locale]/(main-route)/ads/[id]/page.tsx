@@ -104,7 +104,7 @@ export default async function AdDetailsPage({ params }: Props) {
             <ImageGallery images={ad.images} title={ad.title} />
 
             {/* Product Details (Description moved here for mobile) */}
-            <div className="rounded-xl border border-border/40 bg-card p-6">
+            <div className="rounded-lg border border-border/40 bg-card p-6">
               <div className="space-y-4">
                 {/* Title and Badges */}
                 <div className="space-y-2">
@@ -184,7 +184,7 @@ export default async function AdDetailsPage({ params }: Props) {
           {/* Sidebar Column */}
           <div className="space-y-6">
             {/* Contact Actions */}
-            <div className="rounded-xl border border-border/40 bg-card p-6">
+            <div className="rounded-lg border border-border/40 bg-card p-6">
               <div className="flex flex-col gap-2">
                 <a href={`tel:${ad.contactPhone}`}>
                   <Button className="w-full h-11 font-semibold gap-2">
@@ -204,7 +204,7 @@ export default async function AdDetailsPage({ params }: Props) {
             <SellerInfo seller={ad.user} location={ad.location} />
 
             {/* Safety Tips */}
-            <div className="rounded-xl border border-border/40 bg-card p-6">
+            <div className="rounded-lg border border-border/40 bg-card p-6">
               <h3 className="font-semibold mb-3">{t('safetyTips')}</h3>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>• {t('safetyTip1')}</li>

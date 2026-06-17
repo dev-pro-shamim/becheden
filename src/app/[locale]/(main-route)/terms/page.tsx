@@ -98,7 +98,7 @@ export default function TermsPage() {
               {termsContent.content.map((section, index) => (
                 <div key={index} className="group">
                   <div className="flex items-start gap-6">
-                    <div className="p-3 bg-primary/10 rounded-2xl group-hover:bg-primary group-hover:text-white transition-all">
+                    <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary group-hover:text-white transition-all">
                       <section.icon className="w-6 h-6" />
                     </div>
                     <div className="space-y-4">
@@ -109,7 +109,7 @@ export default function TermsPage() {
                       {section.subItems && (
                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
                           {section.subItems.map((item, i) => (
-                            <li key={i} className="flex items-center gap-3 text-muted-foreground bg-muted/30 p-3 rounded-xl border border-border/40">
+                            <li key={i} className="flex items-center gap-3 text-muted-foreground bg-muted/30 p-3 rounded-lg border border-border/40">
                               <div className="w-1.5 h-1.5 bg-primary rounded-full" />
                               {item}
                             </li>
@@ -143,7 +143,7 @@ export default function TermsPage() {
                </p>
                <a 
                  href="mailto:support@becheden.com" 
-                 className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-2xl hover:opacity-90 transition-all shadow-lg shadow-primary/20"
+                 className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:opacity-90 transition-all shadow-lg shadow-primary/20"
                >
                  <Mail className="w-5 h-5" />
                  {t("footerBtn")}

@@ -185,7 +185,7 @@ export const LotteryCard = ({ lottery, isJoining, onJoin }: LotteryCardProps) =>
                   </Button>
                 </div>
               </div>
-              <div className="rounded-2xl border border-primary/10 p-4 bg-primary/5 space-y-2">
+              <div className="rounded-lg border border-primary/10 p-4 bg-primary/5 space-y-2">
                 <div className="flex justify-between text-sm mb-1">
                   <span>{t('pricePerTicket')}</span>
                   <span className="font-semibold">

@@ -79,7 +79,7 @@ export default async function SubscriptionPage() {
                 <div className="bg-primary/5 p-6 border-b border-primary/10">
                   <DialogHeader>
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="p-2 rounded-xl bg-primary text-primary-foreground">
+                      <div className="p-2 rounded-lg bg-primary text-primary-foreground">
                         <Crown className="h-5 w-5" />
                       </div>
                       <DialogTitle className="text-xl">{t("activeSubTitle")}</DialogTitle>
@@ -92,7 +92,7 @@ export default async function SubscriptionPage() {
                 
                 <div className="p-6 space-y-6">
                   {/* Plan Info */}
-                  <div className="flex items-center justify-between p-4 rounded-2xl bg-muted/30 border border-border/50">
+                  <div className="flex items-center justify-between p-4 rounded-lg bg-muted/30 border border-border/50">
                     <div>
                       <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-1">{t("currentPlan")}</p>
                       <h4 className="text-2xl font-bold text-primary">{currentSub?.plan?.name || t("freePlan")}</h4>
@@ -104,7 +104,7 @@ export default async function SubscriptionPage() {
 
                   {/* Details Grid */}
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="space-y-1 p-3 rounded-xl bg-muted/20 border border-border/30">
+                    <div className="space-y-1 p-3 rounded-lg bg-muted/20 border border-border/30">
                       <div className="flex items-center gap-2 text-muted-foreground">
                         <Calendar className="h-3.5 w-3.5" />
                         <span className="text-[10px] font-semibold uppercase tracking-wider">{t("startedOn")}</span>
@@ -113,7 +113,7 @@ export default async function SubscriptionPage() {
                         {currentSub?.createdAt ? format(new Date(currentSub.createdAt), "dd MMM, yyyy") : "N/A"}
                       </p>
                     </div>
-                    <div className="space-y-1 p-3 rounded-xl bg-muted/20 border border-border/30">
+                    <div className="space-y-1 p-3 rounded-lg bg-muted/20 border border-border/30">
                       <div className="flex items-center gap-2 text-muted-foreground">
                         <Clock className="h-3.5 w-3.5" />
                         <span className="text-[10px] font-semibold uppercase tracking-wider">{t("renewalDate")}</span>
@@ -125,7 +125,7 @@ export default async function SubscriptionPage() {
                   </div>
 
                   {/* Credits & Status */}
-                  <div className="flex items-center justify-between px-4 py-3 rounded-xl bg-primary/5 border border-primary/10">
+                  <div className="flex items-center justify-between px-4 py-3 rounded-lg bg-primary/5 border border-primary/10">
                     <div className="flex items-center gap-3">
                       <div className="h-8 w-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-600">
                         <Coins className="h-4 w-4" />
@@ -190,7 +190,7 @@ export default async function SubscriptionPage() {
               
               <CardHeader>
                 <div className="mb-2 flex items-center justify-between">
-                  <div className={`rounded-xl bg-primary/10 p-2.5`}>
+                  <div className={`rounded-lg bg-primary/10 p-2.5`}>
                     {config.icon}
                   </div>
                   {isCurrent && (

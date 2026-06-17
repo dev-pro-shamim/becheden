@@ -84,7 +84,7 @@ export default function NavTop({ extraData }: { extraData?: any }) {
       className="border-b border-primary-foreground/15 overflow-hidden transition-all duration-200 ease-in-out max-h-12 opacity-100 visible"
     >
       {/* Mobile Top Row */}
-      <div className="flex md:hidden h-10 items-center justify-end px-5 text-sm text-accent gap-2">
+      <div className="flex md:hidden h-10 items-center justify-end px-5 text-sm text-primary-foreground gap-2">
         {/* <Link href="/lottery">
           <Button
             variant="ghost"
@@ -107,17 +107,27 @@ export default function NavTop({ extraData }: { extraData?: any }) {
           </DropdownMenuTrigger>
           <DropdownMenuContent
             align="end"
-            className="border-border bg-background text-foreground"
+            className="border-border bg-background text-foreground z-10000"
           >
-            <DropdownMenuItem asChild>
-              <Link href="/profile">{t('profile')}</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href="/auth/login">{t('signIn')}</Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href="/auth/register">{t('register')}</Link>
-            </DropdownMenuItem>
+            {user ? (
+              <>
+                <DropdownMenuItem asChild>
+                  <Link href="/profile">{t('profile')}</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <div onClick={handleLogout} className="text-red-500 hover:text-red-400 cursor-pointer">{t('logout')}</div>
+                </DropdownMenuItem>
+              </>
+            ) : (
+              <>
+                <DropdownMenuItem asChild>
+                  <Link href="/auth/login">{t('signIn')}</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/auth/register">{t('register')}</Link>
+                </DropdownMenuItem>
+              </>
+            )}
           </DropdownMenuContent>
         </DropdownMenu>
 
@@ -143,7 +153,7 @@ export default function NavTop({ extraData }: { extraData?: any }) {
           />
         </Button>
       </div>
-      <div className="custom-width mx-auto hidden md:flex h-9 items-center justify-between px-5 text-sm text-accent">
+      <div className="custom-width mx-auto hidden md:flex h-9 items-center justify-between px-5 text-sm text-primary-foreground">
         <div className="relative h-full min-w-0 flex-1 overflow-hidden">
           <span
             className={`absolute inset-0 flex items-center uppercase ${transitionClass} ${
@@ -161,7 +171,7 @@ export default function NavTop({ extraData }: { extraData?: any }) {
           </span>
         </div>
 
-        <div className="flex h-5 items-center space-x-4 text-sm text-accent">
+        <div className="flex h-5 items-center space-x-4 text-sm text-primary-foreground">
           {/* <Link href="/lottery">
             <Button
               variant="ghost"
@@ -178,7 +188,7 @@ export default function NavTop({ extraData }: { extraData?: any }) {
               <Button
                 variant="ghost"
                 size="sm"
-                className="tracking-widest text-xs text-accent! hover:bg-accent/10"
+                className="tracking-widest text-xs text-primary-foreground! hover:bg-accent/10"
               >
                 {t('myAccount')}
               </Button>

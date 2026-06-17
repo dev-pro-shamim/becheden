@@ -46,7 +46,7 @@ export default function RelatedAds({ ads }: RelatedAdsProps) {
         <CarouselContent className="-ml-4">
           {ads.slice(0, 10).map((ad) => (
             <CarouselItem key={ad._id} className="pl-4 md:basis-1/3 lg:basis-1/5">
-              <div className="overflow-hidden hover:shadow-lg transition-shadow rounded-xl border border-border/40 bg-card h-full">
+              <div className="overflow-hidden hover:shadow-lg transition-shadow rounded-lg border border-border/40 bg-card h-full">
                 <Link href={`/ads/${ad._id}`}>
                   <div className="relative aspect-4/3 overflow-hidden">
                     <Image

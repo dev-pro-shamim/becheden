@@ -78,7 +78,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             {features.map((feature, index) => (
               <div key={index} className="p-8 rounded-[2.5rem] bg-card border border-border/60 hover:border-primary/30 transition-all group">
-                <div className={`w-14 h-14 ${feature.bgColor} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                <div className={`w-14 h-14 ${feature.bgColor} rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                   <feature.icon className={`w-7 h-7 ${feature.color}`} />
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
@@ -148,13 +148,13 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a 
                 href="/ads/create" 
-                className="px-10 py-4 bg-white text-primary font-bold rounded-2xl hover:bg-white/90 transition-all shadow-xl active:scale-95"
+                className="px-10 py-4 bg-white text-primary font-bold rounded-lg hover:bg-white/90 transition-all shadow-xl active:scale-95"
               >
                 {t("ctaBtn1")}
               </a>
               <a 
                 href="/ads" 
-                className="px-10 py-4 bg-primary-foreground/10 text-white border border-white/20 font-bold rounded-2xl hover:bg-white/10 transition-all active:scale-95"
+                className="px-10 py-4 bg-primary-foreground/10 text-white border border-white/20 font-bold rounded-lg hover:bg-white/10 transition-all active:scale-95"
               >
                 {t("ctaBtn2")}
               </a>

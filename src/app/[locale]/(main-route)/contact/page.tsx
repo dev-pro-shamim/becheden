@@ -67,8 +67,8 @@ const ContactPage = () => {
                   { icon: MapPin, title: t("visitTitle"), detail: t("visitDetail"), sub: t("visitSub") },
                   { icon: Clock, title: t("hoursTitle"), detail: t("hoursDetail"), sub: t("hoursSub") }
                 ].map((item, index) => (
-                  <div key={index} className="flex items-start gap-4 p-4 rounded-2xl border border-border bg-card hover:border-primary/50 transition-colors">
-                    <div className="p-3 bg-primary/10 rounded-xl">
+                  <div key={index} className="flex items-start gap-4 p-4 rounded-lg border border-border bg-card hover:border-primary/50 transition-colors">
+                    <div className="p-3 bg-primary/10 rounded-lg">
                       <item.icon className="w-6 h-6 text-primary" />
                     </div>
                     <div>
@@ -108,7 +108,7 @@ const ContactPage = () => {
                         type="text" 
                         {...register("name", { required: true })}
                         placeholder="John Doe" 
-                        className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                       />
                     </div>
                     <div className="space-y-2">
@@ -117,7 +117,7 @@ const ContactPage = () => {
                         type="email" 
                         {...register("email", { required: true })}
                         placeholder="john@example.com" 
-                        className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                       />
                     </div>
                   </div>
@@ -129,7 +129,7 @@ const ContactPage = () => {
                         type="tel" 
                         {...register("phone", { required: true })}
                         placeholder="+880 1234 567 890" 
-                        className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                       />
                     </div>
                     <div className="space-y-2">
@@ -138,7 +138,7 @@ const ContactPage = () => {
                         type="text" 
                         {...register("subject", { required: true })}
                         placeholder={t("formSubjectPlaceholder")} 
-                        className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
                       />
                     </div>
                   </div>
@@ -149,14 +149,14 @@ const ContactPage = () => {
                       {...register("message", { required: true })}
                       rows={6} 
                       placeholder={t("formMessagePlaceholder")} 
-                      className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none"
                     ></textarea>
                   </div>
 
                   <button 
                     type="submit" 
                     disabled={loading}
-                    className="w-full md:w-auto px-10 py-4 bg-primary text-primary-foreground font-bold rounded-xl hover:opacity-90 shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full md:w-auto px-10 py-4 bg-primary text-primary-foreground font-bold rounded-lg hover:opacity-90 shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transition-all active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {loading ? (
                       <>
