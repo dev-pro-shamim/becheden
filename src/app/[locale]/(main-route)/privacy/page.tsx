@@ -144,7 +144,7 @@ export default function PrivacyPage() {
                  </p>
                </div>
                <a 
-                 href="mailto:privacy@recyclemart.com" 
+                 href="mailto:privacy@becheden.com" 
                  className="px-8 py-4 bg-primary text-primary-foreground font-bold rounded-2xl hover:opacity-90 transition-all shadow-lg shadow-primary/20 whitespace-nowrap"
                >
                  {t("footerBtn")}

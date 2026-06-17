@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/profile/', '/auth/', '/chat/', '/success/'],
     },
-    sitemap: 'https://recyclemart.com.bd/sitemap.xml',
+    sitemap: 'https://becheden.com.bd/sitemap.xml',
   };
 }

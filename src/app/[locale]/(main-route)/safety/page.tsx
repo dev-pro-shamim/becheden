@@ -68,7 +68,7 @@ const SafetyPage = () => {
                 </p>
                 <div className="flex flex-wrap gap-4">
                   <a 
-                    href="mailto:support@recyclemart.com" 
+                    href="mailto:support@becheden.com" 
                     className="inline-flex items-center px-6 py-3 rounded-xl bg-destructive text-destructive-foreground font-semibold hover:opacity-90 transition-opacity"
                   >
                     {t("contactSupport")}
@@ -102,7 +102,7 @@ const SafetyPage = () => {
                     </span>
                   </div>
                   <a 
-                    href="mailto:support@recyclemart.com" 
+                    href="mailto:support@becheden.com" 
                     className="inline-flex items-center px-6 py-3 rounded-xl border border-primary/20 font-semibold hover:bg-primary/5 transition-colors text-primary"
                   >
                     {t("contactSupport")}

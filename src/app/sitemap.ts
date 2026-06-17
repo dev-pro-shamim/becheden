@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 import { Category } from '@/types/category.type';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = 'https://recyclemart.com.bd';
+  const baseUrl = 'https://becheden.com.bd';
 
   // Base routes
   const routes: MetadataRoute.Sitemap = [

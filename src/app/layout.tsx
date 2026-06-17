@@ -17,7 +17,7 @@ const righteous = Righteous({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://recyclemart.com.bd"),
+  metadataBase: new URL("https://becheden.com.bd"),
   title: {
     default: "becheben - Buy & Sell Used Goods in Bangladesh",
     template: "%s |Becheden",
@@ -53,12 +53,12 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://recyclemart.com.bd",
+    canonical: "https://becheden.com.bd",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://recyclemart.com.bd",
+    url: "https://becheden.com.bd",
     title: "becheben - Buy & Sell Used Goods in Bangladesh",
     description:
       "Find great deals on used electronics, second-hand cars, bikes, and furniture onBecheden. Safe and fast local buying and selling in Bangladesh.",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: "becheben - Buy & Sell Used Goods in Bangladesh",
     description:
       "Bangladesh's trusted marketplace for buying and selling second-hand goods at great prices.",
-    creator: "@recyclemartbd",
+    creator: "@bechedenbd",
   },
 };
 

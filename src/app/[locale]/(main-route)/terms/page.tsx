@@ -142,7 +142,7 @@ export default function TermsPage() {
                  {t("footerSubtitle")}
                </p>
                <a 
-                 href="mailto:support@recyclemart.com" 
+                 href="mailto:support@becheden.com" 
                  className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-2xl hover:opacity-90 transition-all shadow-lg shadow-primary/20"
                >
                  <Mail className="w-5 h-5" />
