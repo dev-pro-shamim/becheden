@@ -14,6 +14,7 @@ export const fetchAllCategories = async (): Promise<{
       method: "GET",
       isPublic: true,
       tags: ["categories"],
+      revalidate: 0
     });
   } catch (error: any) {
     return {
